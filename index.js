@@ -46,3 +46,12 @@ let people = [
 }
 reverseString(""); 
 
+
+//Write a function that takes in an array of numbers and consoles the first four items multiplied by 8 and the last two added by 5. Console the array with the new values
+function MultiplyNumbers(numbers) {
+  numbers.forEach(function(number) {
+     console.log(number * 2);
+  });
+ }
+ const numbersArray = [1, 2, 3, 4, 5];
+ MultiplyNumbers(numbersArray);
