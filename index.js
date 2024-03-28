@@ -6,6 +6,20 @@
         console.log(strReversed);
 }
 reverseString(["Glory"," ",  "Joy", " ", "Wachira"," ",  "Wairimu"]); 
+
+//Using JS functions and an array of numbers, return positive if an element within the array is positive, negative if an element is negative, else zero
+function checkElements() {
+    let arr =arr.forEach(element => {
+       if (element > 0) {
+         console.log("positive");
+       } else if (element < 0) {
+         console.log("negative");
+       } else {
+         console.log("zero");
+       }
+    });
+   }
+   
 //Write a function that accepts an array of numbers and uses the forEach() method to console.log each number multiplied by 2.
 function arrayNums() {
     const myArray = [1, 2, 3, 4, 5]; myArray. forEach((element) => { console. log(element * 2); });
@@ -18,10 +32,17 @@ let people = [
     { name: "Glory" },
     { salary: [9000, 6700, 8500, 2000] },
   ];
-    people.sort(function(a, b) {
-    return a.salary - (b.salary);
-  });
+  function sortBySalary(employees) {
+    return employees.sort((a, b) => a.salary - b.salary);
+   };
+   
   people.forEach((person) => console.log(person.salary));
  console.log(people);
 
+ function reverseStringsInArray(arr) {
+  // Map over the array to reverse each string
+  const reversedStrings = arr.map(str => [...str].reverse().join(''));
+  console.log(reversedStrings);
+}
+reverseString(""); 
 
