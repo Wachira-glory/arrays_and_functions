@@ -8,17 +8,18 @@
 reverseString(["Glory"," ",  "Joy", " ", "Wachira"," ",  "Wairimu"]); 
 
 //Using JS functions and an array of numbers, return positive if an element within the array is positive, negative if an element is negative, else zero
-function checkElements() {
-    let arr =arr.forEach(element => {
-       if (element > 0) {
-         console.log("positive");
-       } else if (element < 0) {
-         console.log("negative");
-       } else {
-         console.log("zero");
-       }
-    });
-   }
+function checkElement(array, index) {
+  const number = array[index];
+  if (number > 0) {
+     return number + " is positive";
+  } else if (number < 0) {
+     return number + " is negative";
+  } else {
+     return number + " is zero";
+  }
+}
+ const numbers = [6, -9, -1, 7, -2];
+ console.log(checkElement(numbers, 4));
    
 //Write a function that accepts an array of numbers and uses the forEach() method to console.log each number multiplied by 2.
 function arrayNums() {
@@ -27,31 +28,23 @@ function arrayNums() {
 }
 arrayNums()
 // Given an array of objects, where each object represents an employee with an id, name, and salary property, write a function that returns a new array of employee objects sorted by their salary in ascending order.
-let people = [
-    { id: 1 },
-    { name: "Glory" },
-    { salary: [9000, 6700, 8500, 2000] },
-  ];
-  function sortBySalary(employees) {
-    return employees.sort((a, b) => a.salary - b.salary);
-   };
+ let people = [
+  { id: 1, name: 'Glory', salary: 15000 },
+  { id: 2, name: 'Joy', salary: 100000 },
+  { id: 3, name: 'Wachira', salary: 350000 }
+ ];
+ function sortBySalary(employees) {
+     return employees.sort((a, b) => a.salary - b.salary);
+  };
    
   people.forEach((person) => console.log(person.salary));
  console.log(people);
 
- function reverseStringsInArray(arr) {
-  // Map over the array to reverse each string
-  const reversedStrings = arr.map(str => [...str].reverse().join(''));
-  console.log(reversedStrings);
-}
-reverseString(""); 
-
-
 //Write a function that takes in an array of numbers and consoles the first four items multiplied by 8 and the last two added by 5. Console the array with the new values
-function MultiplyNumbers(numbers) {
-  numbers.forEach(function(number) {
-     console.log(number * 2);
-  });
+function transformArray2(arr) {
+  const firstFour = arr.slice(0, 4).map(item => item * 8);
+  const lastTwo = arr.slice(-2).map(item => item + 5);
+  const newArr = firstFour.concat(lastTwo);
+  console.log(newArr);
  }
- const numbersArray = [1, 2, 3, 4, 5];
- MultiplyNumbers(numbersArray);
+ transformArray2([11, 21, 31, 41, 51, 61]);
